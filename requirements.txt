@@ -1,2 +1,7 @@
 django
 django-nose
+django-jenkins
+pyflakes
+pep8
+coverage
+nose-xcover

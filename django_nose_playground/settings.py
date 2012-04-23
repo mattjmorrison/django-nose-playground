@@ -34,11 +34,21 @@ ROOT_URLCONF = 'django_nose_playground.urls'
 
 WSGI_APPLICATION = 'django_nose_playground.wsgi.application'
 
+PROJECT_APPS = (
+    'sample',
+)
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
     'django_nose',
+    'django_jenkins',
+) + PROJECT_APPS
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
 )
+
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
